@@ -4,11 +4,52 @@ let board = [
     ['20', '21', '22']
 ]
 
+let turn= "O";
 
+// function handleClick (x,y) {
 
-function press(cellNO) {
+// }
 
-    // Do stuff
+function press(x,y) {
+    if (turn == "O") {
+        turn="X";
+       } else {
+           turn="O";
+       }
+       
+       board[x][y]= turn;
+       let cell=document.getElementById(`${x}${y}`);
+       cell.innerText = turn;
+       
+       if (board[0][0]==turn && board[0][1]==turn && board[0][2]==turn){
+           document.getElementById("status").innerText= `Bravooooo! ${turn}`;
+       }
+       if (board[0][0]==turn && board[1][1]==turn && board[2][2]==turn){
+           document.getElementById("status").innerText= `Bravooooo! ${turn}`;
+       }
+       if (board[0][0]==turn && board[1][0]==turn && board[2][0]==turn){
+        document.getElementById("status").innerText= `Bravooooo! ${turn}`;
+        }
+        
+        if (board[1][0]==turn && board[1][1]==turn && board[1][2]==turn){
+        document.getElementById("status").innerText= `Bravooooo! ${turn}`;
+    }
+     if (board[2][0]==turn && board[2][1]==turn && board[2][2]==turn){
+        document.getElementById("status").innerText= `Bravooooo! ${turn}`;
+    }
+
+     if (board[0][1]==turn && board[1][1]==turn && board[2][1]==turn){
+        document.getElementById("status").innerText= `Bravooooo! ${turn}`;
+    }
+
+    if (board[0][2]==turn && board[1][2]==turn && board[2][2]==turn){
+        document.getElementById("status").innerText= `Bravooooo! ${turn}`;
+    }
+
+    if (board[0][2]==turn && board[1][1]==turn && board[2][0]==turn){
+        document.getElementById("status").innerText= `Bravooooo! ${turn}`;
+    }
+
     console.log(cellNO)
     
 }
